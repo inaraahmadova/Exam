@@ -1,4 +1,6 @@
-﻿<!--HOME SECTION-->
+﻿@using Exam9.Models
+@model List<Service>
+<!--HOME SECTION-->
 <div id="home-sec">
 
 
@@ -39,48 +41,20 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-md-12 text-center">
-                <div class="col-md-4 ">
-                    <div class="service-div">
-                        <i class="fa fa-desktop fa-5x faa-vertical animated"></i>
-                        <h4>Sure Quique Menu </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 ">
+                        <div class="service-div">
+                            <i class="@item.Icon"></i>
+                            <h4>@item.Title </h4>
+                            <p>
+                               @item.Subtitle
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 ">
-                    <div class="service-div">
-                        <i class="fa fa-flask fa-5x faa-ring animated"></i>
-                        <h4>100% Free Responsive </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="service-div">
-                        <i class="fa fa-credit-card fa-5x faa-shake animated"></i>
-                        <h4>Clean & Customizable </h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                    </div>
-                </div>
+                }
+               
             </div>
             <div class="col-md-12 g-pad-bottom">
                 <div class="col-md-12">

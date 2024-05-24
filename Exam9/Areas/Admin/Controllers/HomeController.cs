@@ -1,12 +1,14 @@
 ﻿using Exam9.DataAccesLayer;
 using Exam9.Models;
 using Exam9.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Exam9.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class HomeController(ServiceContext _context) : Controller
     {
         public async Task<IActionResult> Index()

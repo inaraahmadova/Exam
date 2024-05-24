@@ -50,6 +50,19 @@
                     <li><a href="#services-sec">SERVICES</a></li>
                     <li><a href="#price-sec">PRICING</a></li>
                     <li><a href="#contact-sec">CONTACT</a></li>
+
+                    
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                        <li><a>@User.Identity.Name</a></li>
+                        <li><a asp-action="Logout" asp-controller="Account">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-action="Register" asp-controller="Account">Register</a></li>
+                        <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+
+                    }
                 </ul>
             </div>
 
